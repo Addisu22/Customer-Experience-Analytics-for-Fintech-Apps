@@ -1,0 +1,14 @@
+# .gitignore
+__pycache__/
+*.pyc
+.env
+*.csv
+*.ipynb_checkpoints
+.DS_Store
+*.log
+.venv
+*.sqlite
+*.png
+*.pdf
+data/
+.venv/
