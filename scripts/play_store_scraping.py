@@ -1,7 +1,7 @@
 from google_play_scraper import Sort, reviews
 import pandas as pd
 
-def play_store_scraping(app_id, bank_name, lang='eng', count=500):
+def play_store_scrape(app_id, bank_name, lang='eng', count=500):
     # scraping review from Play_Store
     all_reviews = []
     try:

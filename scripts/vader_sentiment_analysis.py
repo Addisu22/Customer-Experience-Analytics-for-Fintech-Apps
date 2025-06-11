@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.INFO)
 
 def load_reviews(csv_path: str) -> pd.DataFrame:
     df = pd.read_csv(csv_path)
-    required_columns = ['review', 'rating', 'bank']
+    required_columns = ['Review', 'Rating', 'Bank']
     for col in required_columns:
         if col not in df.columns:
             raise ValueError(f"Missing column in dataset: {col}")
