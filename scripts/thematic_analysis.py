@@ -27,7 +27,7 @@ def extract_keywords(df: pd.DataFrame, top_n: int = 10) -> pd.DataFrame:
     for bank in df['Bank'].unique():
         subset = df[df['Bank'] == bank]
         tfidf = TfidfVectorizer(ngram_range=(1, 2), stop_words='english', max_features=100)
-        X = tfidf.fit_transform(subset['review'].astype(str))
+        X = tfidf.fit_transform(subset['Review Description'].astype(str))
         scores = zip(tfidf.get_feature_names_out(), X.sum(axis=0).A1)
         top_keywords = sorted(scores, key=lambda x: x[1], reverse=True)[:top_n]
 
