@@ -33,7 +33,7 @@ def compute_vader_sentiment(df: pd.DataFrame) -> pd.DataFrame:
         else:
             return 'neutral', compound
 
-    df[['sentiment_label', 'sentiment_score']] = df['review'].apply(
+    df[['sentiment_label', 'sentiment_score']] = df['Review Description'].apply(
         lambda x: pd.Series(get_sentiment(str(x)))
     )
     return df
