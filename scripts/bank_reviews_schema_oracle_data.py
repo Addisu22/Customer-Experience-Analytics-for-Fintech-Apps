@@ -1,8 +1,11 @@
 import cx_Oracle
 import pandas as pd
 from datetime import datetime
+user = "bank_reviews"
+password ="System123#"
+dsn = "localhost/XEPDB1"
 
-def connect_to_oracle(username, password, dsn):
+def connect_to_oracle(user, password, dsn):
     try:
         connection = cx_Oracle.connect(username, password, dsn)
         print("Connected to Oracle DB")
