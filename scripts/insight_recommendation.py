@@ -100,3 +100,27 @@ def plot_rating_distribution(df):
     plt.tight_layout()
     plt.savefig('plots/rating_distribution.png')
     plt.show()
+
+def generate_wordcloud(df, bank_name):
+    """Generates a word cloud for reviews of a specific bank.
+
+    Args:
+        df (pd.DataFrame): Data containing 'bank' and 'review'.
+        bank_name (str): Name of the bank ('CBE', 'BOA', 'Dashen').
+    """
+    text = ' '.join(df[df['bank'] == bank_name]['review'])
+    wordcloud = WordCloud(
+        width=800,
+        height=400,
+        background_color='white'
+    ).generate(text)
+
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.title(f'Most Frequent Words - {bank_name}')
+    plt.axis('off')
+    plt.tight_layout()
+    plt.savefig(f'plots/wordcloud_{bank_name.lower()}.png')
+    plt.show()
+
+    
