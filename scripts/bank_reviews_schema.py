@@ -7,7 +7,7 @@ conn = cx_Oracle.connect("your_username", "your_password", "localhost/XEPDB1")
 cursor = conn.cursor()
 
 # Read cleaned data
-df = pd.read_csv("bank_cleaned_reviews.csv")
+df = pd.read_csv("data/bank_cleaned_reviews.csv")
 
 # Insert banks
 banks = df['bank_name'].unique()
